@@ -84,7 +84,7 @@ class Game {
     if (gb[0][2] != null && gb[0][2] === gb[1][2] && gb[1][2] === gb[2][2]) {
       return { isOver: false, isWin: true, idx: [2, 5, 8] };
     }
-    // check diagonales
+    // check diagonals
     if (gb[0][0] != null && gb[0][0] === gb[1][1] && gb[1][1] === gb[2][2]) {
       return { isOver: false, isWin: true, idx: [0, 4, 8] };
     }

@@ -109,7 +109,7 @@ Dans cette seconde partie, nous vous demandons de programmer le jeu
 
 Organisez votre code de sorte à pouvoir recommencer infiniment. Si js perd alors c'est love qui commence la prochaine partie. Veillez à ne pas soumettre le formulaire, ce qui impliquerait de recharger la page.
 
-## Bonus 🥳 1
+## Bonus 🥳 2
 
 Dans le document HTML se trouvent 3 templates JavaScript qui contiennent chacun un formulaire différent. Dès lors, vous pouvez améliorer le point précédent en chargeant le bon formulaire à l’aide de la méthode importNode(). Attention, cette méthode retournera le formulaire si vous lui passez le bon sélecteur, il n'est pas encore inclus dans l'arbre du document. Pour ce faire, vous devez appeler une méthode telle que insertAdjacentElement().
 
