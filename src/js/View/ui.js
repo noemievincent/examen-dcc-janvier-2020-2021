@@ -1,5 +1,5 @@
 import {
-  PLAYER_SUFFIXE,
+  PLAYER_SUFFIX,
   NO_JS_MESSAGE,
   TIMER,
   JS_ENABLED,
@@ -24,7 +24,7 @@ const ui = {
     document.documentElement.classList.add(JS_ENABLED);
     this.timer = document.querySelector(`.${TIMER}`);
     document.querySelector(`.${NO_JS_MESSAGE}`).remove();
-    this.js_win_forms = [document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE}--${PLAYER_SUFFIXE[0]}`), document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE}--${PLAYER_SUFFIXE[1]}`), document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE_LOST}`)]
+    this.js_win_forms = [document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE}--${PLAYER_SUFFIX[0]}`), document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE}--${PLAYER_SUFFIX[1]}`), document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE_LOST}`)]
     this.buildButtons();
     this.updateTimer(MAX_TIME_SECONDS);
   },
@@ -32,18 +32,18 @@ const ui = {
     for (const item of this.items) {
       item.classList.remove(...[...CLASS_NAME_FOR_PLAYER_ITEM, WINNER]);
     }
-    this.app.classList.remove(...PLAYER_SUFFIXE);
+    this.app.classList.remove(...PLAYER_SUFFIX);
     this.resultsElements.forEach((element, idx) => {
       element.textContent = this.resultsText[idx];
     })
     this.updateTimer(MAX_TIME_SECONDS);
     document.querySelector(`.${CLASS_NAME_FOR_PLAY_AGAIN_TEMPLATE_FORM}`).remove();
     this.data.next();
-    this.app.classList.add(PLAYER_SUFFIXE[this.data.currentPlayerIdx]);
+    this.app.classList.add(PLAYER_SUFFIX[this.data.currentPlayerIdx]);
   },
   buildButtons() {
     this.app = document.getElementById(ID_APP);
-    this.app.classList.add(PLAYER_SUFFIXE[this.data.currentPlayerIdx]);
+    this.app.classList.add(PLAYER_SUFFIX[this.data.currentPlayerIdx]);
     for (let i = 1; i < 10; i++) {
       this.app.insertAdjacentHTML('beforeend', ITEM_ELEMENT);
       this.items.push(this.app.lastChild);
@@ -57,8 +57,8 @@ const ui = {
     return this.arrayPosition[this.items.findIndex(item => item === target)];
   },
   displayNextPlayer() {
-    this.app.classList.remove(...PLAYER_SUFFIXE);
-    this.app.classList.add(PLAYER_SUFFIXE[this.data.currentPlayerIdx]);
+    this.app.classList.remove(...PLAYER_SUFFIX);
+    this.app.classList.add(PLAYER_SUFFIX[this.data.currentPlayerIdx]);
   },
   highlightWinner(winnerIdx) {
     for (const winnerIdx1 of winnerIdx) {
